@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p><%= formato(@vehicle) %></p>
+
+<p>
+  <%= strongify('Nombre:') %>
+  <%= @vehicle.name %>
+</p>
+
+<p>
+  <%= strongify('Marca:') %>
+  <%= @vehicle.brand.name %>
+</p>
+
+<p>
+  <%= strongify('Tipo:') %>
+  <%= @vehicle.vehicle_type.name%>
+</p>
+
+<p>
+  <%= strongify('Cliente:') %>
+  <%= @vehicle.customer.name%>
+</p>
+
+<p>
+  <%= strongify('Precio:') %>
+  <%= @vehicle.price%>
+</p>
+
+<p>
+  <%= strongify('Kilomentros:') %>
+  <%= @vehicle.amount_of_km%>
+</p>
+
+<p>
+  <%= strongify('Tipo de combustible:') %>
+  <%= @vehicle.fuel_type%>
+</p>
+
+<p>
+  <%= strongify('Año:') %>
+  <%= @vehicle.year%>
+</p>
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+<%= link_to 'Back', vehicles_path %>

@@ -1,0 +1,31 @@
+<h1>Clientes</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Telefono</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.phone %></td>
+        <td><%= link_to (icon('eye-open')+'Ver'), customer, class: 'btn btn-info' %></td>
+        <td><%= link_to (icon('edit')+'Editar'), edit_customer_path(customer), class: 'btn btn-warning' %></td>
+        <td><%= link_to (icon('remove')+'Eliminar'), customer, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to icon('plus')+'Nuevo Cliente', new_customer_path, class: 'btn btn-success' %>

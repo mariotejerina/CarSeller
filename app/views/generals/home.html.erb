@@ -1,0 +1,43 @@
+<div class="hero-unit">
+  <h1>Bienvenido!</h1>
+  <p>Contactenos..!!! ;)</p>
+  <p>
+    <%= link_to icon('envelope')+'Contacto', root_url, class: 'btn btn-large btn-success' %>
+  </p>
+
+  <%= image_tag('yellow.jpg', :class => "img-circle") %>
+
+  <br><br>
+
+  <ul class="thumbnails">
+    <li class="span3">
+      <h3>Vehiculos</h3>
+      <a href="<%= vehicles_path %>" class="thumbnail">
+        <%= image_tag('vehiculos.jpg', :class => "img-rounded") %>
+        <p>Ver más</p>
+      </a>
+    </li>
+    <li class="span3">
+      <h3>Tipos de vehiculos</h3>
+      <a href="<%= vehicle_types_path %>" class="thumbnail">
+        <%= image_tag('tipos.png', :class => "img-rounded") %>
+        <p>Ver más</p>
+      </a>
+    </li>
+    <li class="span3">
+      <h3>Marcas</h3>
+      <a href="<%= brands_path %>" class="thumbnail">
+        <%= image_tag('marcas.jpg', :class => "img-rounded") %>
+        <p>Ver más</p>
+      </a>
+    </li>
+    <li class="span3">
+      <h3>Clientes</h3>
+      <a href="<%= customers_path %>" class="thumbnail">
+        <%= image_tag('clientes.jpg', :class => "img-rounded") %>
+        <p>Ver más</p>
+      </a>
+    </li>
+  </ul>
+</div>
+

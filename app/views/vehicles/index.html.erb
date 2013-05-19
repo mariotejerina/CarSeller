@@ -1,0 +1,37 @@
+<h1>Vehiculos</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Marca</th>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Cliente</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr class="vehicle<%#= cycle :success, :error, :warning, :info %>">
+        <td><%= vehicle.name %></td>
+        <td><%= vehicle.brand.name %></td>
+        <td><%= vehicle.vehicle_type.name %></td>
+        <td><%= vehicle.customer.name %></td>
+        <td><%= vehicle.price %></td>
+        <td><%= vehicle.amount_of_km %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= link_to (icon('eye-open')+'Ver'), vehicle, class: 'btn btn-info' %></td>
+        <td><%= link_to (icon('edit')+'Editar'), edit_vehicle_path(vehicle), class: 'btn btn-warning' %></td>
+        <td><%= link_to (icon('remove')+'Eliminar'), vehicle, class: 'btn btn-danger' , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to icon('plus')+'Nuevo Vehiculo', new_vehicle_path, class: 'btn btn-success' %>
